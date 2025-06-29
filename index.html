@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XMRsouk - Donate Monero</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    img.logo {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .xmr-address {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 8px;
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+    button.copy-btn {
+      background: #ff6600;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .progress-container {
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .progress-bar {
+      height: 25px;
+      background: linear-gradient(to right, #ff6600, #663300);
+      width: 30%; /* Change this value manually as needed */
+    }
+    .donors {
+      text-align: left;
+      margin-top: 30px;
+    }
+    .donors h3 {
+      color: #ff6600;
+    }
+    .donors ul {
+      list-style: none;
+      padding: 0;
+    }
+    .donors li {
+      padding: 5px 0;
+      border-bottom: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="XMRsouk Logo" class="logo" />
+    <h1>Support XMRsouk</h1>
+    <p>Your one-stop for all Monero vibes in Lebanon</p>
+
+    <div class="xmr-address" id="xmr-address">
+      YOUR_XMR_ADDRESS_HERE
+    </div>
+    <button class="copy-btn" onclick="copyAddress()">Copy XMR Address</button>
+
+    <h3>Goal: 10 XMR</h3>
+    <div class="progress-container">
+      <div class="progress-bar" style="width: 3%"></div> <!-- Update % manually -->
+    </div>
+    <p>Raised: 0.3 XMR</p> <!-- Update this manually -->
+
+    <div class="donors">
+      <h3>Contributors</h3>
+      <ul>
+        <li>Alice — 0.2 XMR</li>
+        <li>Bob — 0.1 XMR</li>
+        <!-- Add more manually -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function copyAddress() {
+      const address = document.getElementById("xmr-address").innerText;
+      navigator.clipboard.writeText(address).then(() => {
+        alert("XMR address copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
