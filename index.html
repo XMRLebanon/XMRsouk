@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XMRsouk</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    .logo {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      font-weight: bold;
+      color: #f97316;
+      text-shadow: 0 0 10px #f97316;
+      margin-bottom: 30px;
+    }
+
+    .donate-button {
+      background-color: #f97316;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .donate-button:hover {
+      background-color: #fb923c;
+    }
+
+    .progress-container {
+      width: 80%;
+      max-width: 400px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      height: 25px;
+      background-color: #f97316;
+      width: 0%;
+      text-align: center;
+      line-height: 25px;
+      color: white;
+      font-weight: bold;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="XMRsouk_logo.png" alt="XMRsouk Logo" class="logo" />
+    <div class="tagline">Your one-stop for all MONERO vibes in Lebanon</div>
+
+    <a href="monero:4ApKm5y7FHWhqCKiDPDaGkXSwvX6CRKTEVc1haQAy74SKkeGQTUhTavRtZLJC2HctcZfsv3qYDGo275y4v3SnxGAEbmnYKJ" target="_blank">
+      <button class="donate-button">Donate</button>
+    </a>
+
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar">0%</div>
+    </div>
+    <div id="progressText" class="progress-text">0 XMR / 12 XMR</div>
+  </div>
+
+  <script>
+    // Simulated donation amount - replace this with real-time logic
+    let donatedXMR = 0;
+    const goalXMR = 12;
+
+    function updateProgress(donated) {
+      const percent = Math.min((donated / goalXMR) * 100, 100);
+      document.getElementById("progressBar").style.width = percent + "%";
+      document.getElementById("progressBar").textContent = Math.floor(percent) + "%";
+      document.getElementById("progressText").textContent = `${donated} XMR / ${goalXMR} XMR`;
+    }
+
+    // Initially show 0
+    updateProgress(donatedXMR);
+
+    // Example: if you want to simulate a donation, you can uncomment below:
+    // donatedXMR = 4.25;
+    // updateProgress(donatedXMR);
+  </script>
+</body>
+</html>
