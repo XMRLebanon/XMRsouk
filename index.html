@@ -8,25 +8,24 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      background: url('logo.png') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
     }
-    .container {
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
       max-width: 600px;
       margin: 60px auto;
-      padding: 20px;
-    }
-    img.logo {
-      width: 300px;
-      margin-bottom: 20px;
+      border-radius: 12px;
     }
     .xmr-address {
       background-color: #222;
       padding: 15px;
       border-radius: 8px;
-      word-break: break-all;
+      word-break: break-word;
       margin-bottom: 20px;
     }
     button.copy-btn {
@@ -48,7 +47,7 @@
     .progress-bar {
       height: 25px;
       background: linear-gradient(to right, #ff6600, #663300);
-      width: 30%; /* Change this value manually as needed */
+      width: 0%; /* start at 0% */
     }
     .donors {
       text-align: left;
@@ -65,11 +64,14 @@
       padding: 5px 0;
       border-bottom: 1px solid #444;
     }
+    .no-donors {
+      color: #ccc;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="XMRsouk Logo" class="logo" />
+  <div class="overlay">
     <h1>Support XMRsouk</h1>
     <p>Your one-stop for all Monero vibes in Lebanon</p>
 
@@ -80,16 +82,16 @@
 
     <h3>Goal: 10 XMR</h3>
     <div class="progress-container">
-      <div class="progress-bar" style="width: 3%"></div> <!-- Update % manually -->
+      <div class="progress-bar" style="width: 0%"></div>
     </div>
-    <p>Raised: 0.3 XMR</p> <!-- Update this manually -->
+    <p>0 XMR / 10 XMR</p>
 
     <div class="donors">
       <h3>Contributors</h3>
-      <ul>
-        <li>Alice — 0.2 XMR</li>
-        <li>Bob — 0.1 XMR</li>
-        <!-- Add more manually -->
+      <p class="no-donors">No contributors yet.</p>
+      <ul style="display: none;">
+        <!-- This list will show up only when someone donates -->
+        <!-- Example: <li>Alice — 0.2 XMR</li> -->
       </ul>
     </div>
   </div>
