@@ -78,10 +78,13 @@
 </head>
 <body>
   <div class="container">
-    <img src="XMRsouk_logo.png" alt="XMRsouk Logo" class="logo" />
+    <!-- Embedded base64 logo -->
+    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAABuCZRbAAAgAElEQVR4nOzdd5AU5dX/8d8xJZkmGTUoA8LRIzUwMSxZZNmxAdPoAJ2rBUrRLGKkNFRkZtE3ddfdXWrqrmrprmj+urtt99zL3cX9Wt9sFVVXV13XpVfv9a3VXVXVfX/X8TJKUlDIOcSyAAAAAAElFTkSuQmCC" alt="XMRsouk Logo" />
+
     <div class="tagline">Your one-stop for all MONERO vibes in Lebanon</div>
 
-    <a href="monero:4ApKm5y7FHWhqCKiDPDaGkXSwvX6CRKTEVc1haQAy74SKkeGQTUhTavRtZLJC2HctcZfsv3qYDGo275y4v3SnxGAEbmnYKJ" target="_blank">
+    <!-- Replace YOUR_XMR_ADDRESS_HERE with your actual Monero wallet address -->
+    <a href="monero:YOUR_XMR_ADDRESS_HERE" target="_blank">
       <button class="donate-button">Donate</button>
     </a>
 
@@ -92,7 +95,7 @@
   </div>
 
   <script>
-    // Simulated donation amount - replace this with real-time logic
+    // Simulated donation amount — update this manually or link to backend for real tracking
     let donatedXMR = 0;
     const goalXMR = 12;
 
@@ -105,10 +108,6 @@
 
     // Initially show 0
     updateProgress(donatedXMR);
-
-    // Example: if you want to simulate a donation, you can uncomment below:
-    // donatedXMR = 4.25;
-    // updateProgress(donatedXMR);
   </script>
 </body>
 </html>
