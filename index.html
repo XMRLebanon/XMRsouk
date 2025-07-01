@@ -1,113 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>XMRsouk</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XMRsouk | Monero in Lebanon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #121212;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
+      background: #0f0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
       text-align: center;
+      padding: 40px 20px 10px;
+      animation: fadeInDown 1s ease;
     }
-
-    .container {
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #ff6600;
+    }
+    header h2 {
+      font-size: 1.5em;
+      color: #ccc;
+    }
+    nav {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px 20px;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      animation: fadeIn 2s ease;
     }
-
-    .logo {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    .tagline {
-      font-size: 20px;
+    nav a {
+      color: #ff6600;
+      text-decoration: none;
       font-weight: bold;
-      color: #f97316;
-      text-shadow: 0 0 10px #f97316;
-      margin-bottom: 30px;
     }
-
-    .donate-button {
-      background-color: #f97316;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-bottom: 20px;
-      transition: background 0.3s ease;
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease;
     }
-
-    .donate-button:hover {
-      background-color: #fb923c;
-    }
-
-    .progress-container {
-      width: 80%;
-      max-width: 400px;
+    .donate-bar {
       background: #333;
       border-radius: 10px;
       overflow: hidden;
-      margin-top: 10px;
+      margin: 20px 0;
     }
-
-    .progress-bar {
-      height: 25px;
-      background-color: #f97316;
+    .donate-bar-inner {
       width: 0%;
-      text-align: center;
-      line-height: 25px;
-      color: white;
-      font-weight: bold;
-      transition: width 0.3s ease;
+      height: 20px;
+      background: #ff6600;
+      transition: width 2s ease;
     }
-
-    .progress-text {
-      margin-top: 10px;
-      font-size: 16px;
+    .donate-button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .arabic {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      text-align: right;
+      margin-top: 40px;
+      animation: fadeInUp 2s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Embedded base64 logo -->
-    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAABuCZRbAAAgAElEQVR4nOzdd5AU5dX/8d8xJZkmGTUoA8LRIzUwMSxZZNmxAdPoAJ2rBUrRLGKkNFRkZtE3ddfdXWrqrmrprmj+urtt99zL3cX9Wt9sFVVXV13XpVfv9a3VXVXVfX/X8TJKUlDIOcSyAAAAAAElFTkSuQmCC" alt="XMRsouk Logo" />
-
-    <div class="tagline">Your one-stop for all MONERO vibes in Lebanon</div>
-
-    <!-- Replace YOUR_XMR_ADDRESS_HERE with your actual Monero wallet address -->
-    <a href="monero:YOUR_XMR_ADDRESS_HERE" target="_blank">
-      <button class="donate-button">Donate</button>
-    </a>
-
-    <div class="progress-container">
-      <div id="progressBar" class="progress-bar">0%</div>
+  <header>
+    <h1>XMRsouk</h1>
+    <h2>Your gateway to Monero adoption in Lebanon | بوابتك لاعتماد مونيرو في لبنان</h2>
+  </header>  <nav>
+    <a href="Page1_Introduction_and_Vision.md">Introduction</a>
+    <a href="Page2_Field_Visits_and_Promotion_Plan.md">Promotion Plan</a>
+    <a href="Page3_Infrastructure_Costs.md">Costs</a>
+    <a href="Page4_Risk_Transparency_and_Strategy.md">Strategy</a>
+  </nav>  <div class="section">
+    <h2>Donate to XMRsouk</h2>
+    <div class="donate-bar">
+      <div class="donate-bar-inner" style="width: 0%" id="progress"></div>
     </div>
-    <div id="progressText" class="progress-text">0 XMR / 12 XMR</div>
-  </div>
+    <p>0 XMR / 10 XMR</p>
+    <button class="donate-button" onclick="copyAddress()">Donate</button>
+    <p id="copyMsg" style="color: lightgreen; display: none;">Donation address copied!</p>
+  </div>  <div class="section">
+    <h2>What is Monero?</h2>
+    <p>Monero (XMR) is a privacy-focused cryptocurrency that allows secure, untraceable, and decentralized payments. It's ideal for businesses and users who value their financial privacy and freedom.</p>
+  </div>  <div class="section arabic">
+    <h2>ما هو مونيرو؟</h2>
+    <p>مونيرو (XMR) هو عملة رقمية تركز على الخصوصية، وتوفر مدفوعات آمنة وغير قابلة للتتبع ولا مركزية. إنها مثالية للأعمال والأفراد الذين يهتمون بحريتهم المالية وخصوصيتهم.</p>
+  </div>  <script>
+    // Simulate progress for demonstration
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('progress').style.width = '0%'; // Update this value with real donation progress if needed
+    });
 
-  <script>
-    // Simulated donation amount — update this manually or link to backend for real tracking
-    let donatedXMR = 0;
-    const goalXMR = 12;
-
-    function updateProgress(donated) {
-      const percent = Math.min((donated / goalXMR) * 100, 100);
-      document.getElementById("progressBar").style.width = percent + "%";
-      document.getElementById("progressBar").textContent = Math.floor(percent) + "%";
-      document.getElementById("progressText").textContent = `${donated} XMR / ${goalXMR} XMR`;
+    function copyAddress() {
+      const address = '4ApKm5y7FHWhqCKiDPDaGkXSwvX6CRKTEVc1haQAy74SKkeGQTUhTavRtZLJC2HctcZfsv3qYDGo275y4v3SnxGAEbmnYKJ';
+      navigator.clipboard.writeText(address).then(() => {
+        document.getElementById('copyMsg').style.display = 'block';
+      });
     }
-
-    // Initially show 0
-    updateProgress(donatedXMR);
-  </script>
-</body>
+  </script></body>
 </html>
