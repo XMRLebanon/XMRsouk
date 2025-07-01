@@ -17,10 +17,9 @@
       padding: 40px 20px 10px;
       animation: fadeInDown 1s ease;
     }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #ff6600;
+    header img {
+      max-width: 200px;
+      height: auto;
     }
     header h2 {
       font-size: 1.5em;
@@ -57,13 +56,13 @@
       transition: width 2s ease;
     }
     .donate-button {
+      display: inline-block;
       background: #ff6600;
       color: white;
-      border: none;
+      text-decoration: none;
       padding: 12px 24px;
       font-size: 1em;
       border-radius: 8px;
-      cursor: pointer;
       margin-top: 20px;
     }
     .arabic {
@@ -89,7 +88,7 @@
 </head>
 <body>
   <header>
-    <h1>XMRsouk</h1>
+    <img src="logo.png" alt="XMRsouk Logo">
     <h2>Your gateway to Monero adoption in Lebanon | بوابتك لاعتماد مونيرو في لبنان</h2>
   </header>  <nav>
     <a href="Page1_Introduction_and_Vision.md">Introduction</a>
@@ -102,8 +101,7 @@
       <div class="donate-bar-inner" style="width: 0%" id="progress"></div>
     </div>
     <p>0 XMR / 10 XMR</p>
-    <button class="donate-button" onclick="copyAddress()">Donate</button>
-    <p id="copyMsg" style="color: lightgreen; display: none;">Donation address copied!</p>
+    <a href="monero:4ApKm5y7FHWhqCKiDPDaGkXSwvX6CRKTEVc1haQAy74SKkeGQTUhTavRtZLJC2HctcZfsv3qYDGo275y4v3SnxGAEbmnYKJ" class="donate-button">Donate</a>
   </div>  <div class="section">
     <h2>What is Monero?</h2>
     <p>Monero (XMR) is a privacy-focused cryptocurrency that allows secure, untraceable, and decentralized payments. It's ideal for businesses and users who value their financial privacy and freedom.</p>
@@ -111,16 +109,8 @@
     <h2>ما هو مونيرو؟</h2>
     <p>مونيرو (XMR) هو عملة رقمية تركز على الخصوصية، وتوفر مدفوعات آمنة وغير قابلة للتتبع ولا مركزية. إنها مثالية للأعمال والأفراد الذين يهتمون بحريتهم المالية وخصوصيتهم.</p>
   </div>  <script>
-    // Simulate progress for demonstration
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('progress').style.width = '0%'; // Update this value with real donation progress if needed
+      document.getElementById('progress').style.width = '0%';
     });
-
-    function copyAddress() {
-      const address = '4ApKm5y7FHWhqCKiDPDaGkXSwvX6CRKTEVc1haQAy74SKkeGQTUhTavRtZLJC2HctcZfsv3qYDGo275y4v3SnxGAEbmnYKJ';
-      navigator.clipboard.writeText(address).then(() => {
-        document.getElementById('copyMsg').style.display = 'block';
-      });
-    }
   </script></body>
 </html>
